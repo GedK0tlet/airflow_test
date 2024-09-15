@@ -1,0 +1,23 @@
+[2024-09-14T19:38:21.471+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: save_city_info_weather_v01.fetcher_data manual__2024-09-14T19:38:19.207198+00:00 [queued]>
+[2024-09-14T19:38:21.475+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: save_city_info_weather_v01.fetcher_data manual__2024-09-14T19:38:19.207198+00:00 [queued]>
+[2024-09-14T19:38:21.476+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-14T19:38:21.476+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2024-09-14T19:38:21.476+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-14T19:38:21.482+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): fetcher_data> on 2024-09-14 19:38:19.207198+00:00
+[2024-09-14T19:38:21.485+0000] {standard_task_runner.py:55} INFO - Started process 10393 to run task
+[2024-09-14T19:38:21.487+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'save_city_info_weather_v01', 'fetcher_data', 'manual__2024-09-14T19:38:19.207198+00:00', '--job-id', '123', '--raw', '--subdir', 'DAGS_FOLDER/saver_info.py', '--cfg-path', '/tmp/tmp63n380gl']
+[2024-09-14T19:38:21.488+0000] {standard_task_runner.py:83} INFO - Job 123: Subtask fetcher_data
+[2024-09-14T19:38:21.526+0000] {task_command.py:389} INFO - Running <TaskInstance: save_city_info_weather_v01.fetcher_data manual__2024-09-14T19:38:19.207198+00:00 [running]> on host 0c5fe11d0c9c
+[2024-09-14T19:38:21.564+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=me
+AIRFLOW_CTX_DAG_ID=save_city_info_weather_v01
+AIRFLOW_CTX_TASK_ID=fetcher_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-14T19:38:19.207198+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-14T19:38:19.207198+00:00
+[2024-09-14T19:38:22.420+0000] {python.py:177} INFO - Done. Returned value was: {'max_temp': 20.21, 'min_temp': 18.38, 'description': 'пасмурно', 'wind_speed': 4.35, 'name': 'Москва'}
+[2024-09-14T19:38:22.442+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=save_city_info_weather_v01, task_id=fetcher_data, execution_date=20240914T193819, start_date=20240914T193821, end_date=20240914T193822
+[2024-09-14T19:38:22.475+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2024-09-14T19:38:22.491+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check

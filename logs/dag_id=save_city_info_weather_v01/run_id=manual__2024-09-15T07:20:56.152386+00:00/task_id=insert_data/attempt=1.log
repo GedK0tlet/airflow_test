@@ -1,0 +1,29 @@
+[2024-09-15T07:21:02.751+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: save_city_info_weather_v01.insert_data manual__2024-09-15T07:20:56.152386+00:00 [queued]>
+[2024-09-15T07:21:02.758+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: save_city_info_weather_v01.insert_data manual__2024-09-15T07:20:56.152386+00:00 [queued]>
+[2024-09-15T07:21:02.759+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-15T07:21:02.759+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2024-09-15T07:21:02.759+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-15T07:21:02.768+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): insert_data> on 2024-09-15 07:20:56.152386+00:00
+[2024-09-15T07:21:02.771+0000] {standard_task_runner.py:55} INFO - Started process 2974 to run task
+[2024-09-15T07:21:02.773+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'save_city_info_weather_v01', 'insert_data', 'manual__2024-09-15T07:20:56.152386+00:00', '--job-id', '323', '--raw', '--subdir', 'DAGS_FOLDER/saver_info.py', '--cfg-path', '/tmp/tmpte9ohy1_']
+[2024-09-15T07:21:02.774+0000] {standard_task_runner.py:83} INFO - Job 323: Subtask insert_data
+[2024-09-15T07:21:02.807+0000] {task_command.py:389} INFO - Running <TaskInstance: save_city_info_weather_v01.insert_data manual__2024-09-15T07:20:56.152386+00:00 [running]> on host 0c5fe11d0c9c
+[2024-09-15T07:21:02.858+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=me
+AIRFLOW_CTX_DAG_ID=save_city_info_weather_v01
+AIRFLOW_CTX_TASK_ID=insert_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-15T07:20:56.152386+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-15T07:20:56.152386+00:00
+[2024-09-15T07:21:02.858+0000] {sql.py:253} INFO - Executing: insert into weathers (city_name, max_temp, min_temp, wind, descript)
+        values (%(sname)s, %(max_temp)s, %(min_temp)s, %(wind)s, %(descript)s);
+[2024-09-15T07:21:02.866+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-09-15T07:21:02.999+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-09-15T07:21:03.011+0000] {sql.py:364} INFO - Running statement: insert into weathers (city_name, max_temp, min_temp, wind, descript)
+        values (%(sname)s, %(max_temp)s, %(min_temp)s, %(wind)s, %(descript)s);, parameters: {'sname': '{{ti.xcom_pull(task_ids="fetcher_data", key="name")}}', 'max_temp': '{{ti.xcom_pull(task_ids="fetcher_data", key="max_temp")}}', 'min_temp': '{{ti.xcom_pull(task_ids="fetcher_data", key="min_temp")}}', 'wind': '{{ti.xcom_pull(task_ids="fetcher_data", key="wind_speed")}}', 'descript': '{{ti.xcom_pull(task_ids="fetcher_data", key="description")}}'}
+[2024-09-15T07:21:03.018+0000] {sql.py:373} INFO - Rows affected: 1
+[2024-09-15T07:21:03.027+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=save_city_info_weather_v01, task_id=insert_data, execution_date=20240915T072056, start_date=20240915T072102, end_date=20240915T072103
+[2024-09-15T07:21:03.040+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2024-09-15T07:21:03.053+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

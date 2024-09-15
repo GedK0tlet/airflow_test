@@ -1,0 +1,23 @@
+[2024-09-14T16:02:55.728+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: tutorial_taskflow_api_etl.extract manual__2024-09-14T15:59:29.573614+00:00 [queued]>
+[2024-09-14T16:02:55.733+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: tutorial_taskflow_api_etl.extract manual__2024-09-14T15:59:29.573614+00:00 [queued]>
+[2024-09-14T16:02:55.733+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-14T16:02:55.733+0000] {taskinstance.py:1284} INFO - Starting attempt 2 of 2
+[2024-09-14T16:02:55.733+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-14T16:02:55.741+0000] {taskinstance.py:1304} INFO - Executing <Task(_PythonDecoratedOperator): extract> on 2024-09-14 15:59:29.573614+00:00
+[2024-09-14T16:02:55.744+0000] {standard_task_runner.py:55} INFO - Started process 492 to run task
+[2024-09-14T16:02:55.746+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'tutorial_taskflow_api_etl', 'extract', 'manual__2024-09-14T15:59:29.573614+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpgue1cn3x']
+[2024-09-14T16:02:55.747+0000] {standard_task_runner.py:83} INFO - Job 10: Subtask extract
+[2024-09-14T16:02:55.778+0000] {task_command.py:389} INFO - Running <TaskInstance: tutorial_taskflow_api_etl.extract manual__2024-09-14T15:59:29.573614+00:00 [running]> on host 769272fb41c3
+[2024-09-14T16:02:55.810+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=tutorial_taskflow_api_etl
+AIRFLOW_CTX_TASK_ID=extract
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-14T15:59:29.573614+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-14T15:59:29.573614+00:00
+[2024-09-14T16:02:55.811+0000] {python.py:177} INFO - Done. Returned value was: {'1001': 301.27, '1002': 433.21, '1003': 502.22}
+[2024-09-14T16:02:55.822+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=tutorial_taskflow_api_etl, task_id=extract, execution_date=20240914T155929, start_date=20240914T160255, end_date=20240914T160255
+[2024-09-14T16:02:55.843+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2024-09-14T16:02:55.860+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check

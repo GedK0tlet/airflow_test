@@ -1,0 +1,60 @@
+[2024-09-14T18:05:08.868+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: save_city_info_weather.save_city_info_weather manual__2024-09-14T18:05:07.388555+00:00 [queued]>
+[2024-09-14T18:05:08.875+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: save_city_info_weather.save_city_info_weather manual__2024-09-14T18:05:07.388555+00:00 [queued]>
+[2024-09-14T18:05:08.875+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-14T18:05:08.875+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2024-09-14T18:05:08.875+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-14T18:05:08.884+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): save_city_info_weather> on 2024-09-14 18:05:07.388555+00:00
+[2024-09-14T18:05:08.888+0000] {standard_task_runner.py:55} INFO - Started process 2545 to run task
+[2024-09-14T18:05:08.890+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'save_city_info_weather', 'save_city_info_weather', 'manual__2024-09-14T18:05:07.388555+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/saver_info.py', '--cfg-path', '/tmp/tmpxbjn9lyf']
+[2024-09-14T18:05:08.891+0000] {standard_task_runner.py:83} INFO - Job 55: Subtask save_city_info_weather
+[2024-09-14T18:05:08.933+0000] {task_command.py:389} INFO - Running <TaskInstance: save_city_info_weather.save_city_info_weather manual__2024-09-14T18:05:07.388555+00:00 [running]> on host 0c5fe11d0c9c
+[2024-09-14T18:05:08.976+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=me
+AIRFLOW_CTX_DAG_ID=save_city_info_weather
+AIRFLOW_CTX_TASK_ID=save_city_info_weather
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-14T18:05:07.388555+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-14T18:05:07.388555+00:00
+[2024-09-14T18:05:08.981+0000] {sql.py:253} INFO - Executing: 
+            create table if not exists weathers (
+                id INTEGER PRIMARY KEY AUTOINCREMENT
+                city_name character varying
+                max_temp character varying
+                min_temp character varying
+                wind character varying
+                description character varying
+            )
+        
+[2024-09-14T18:05:08.999+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-09-14T18:05:09.123+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-09-14T18:05:09.135+0000] {sql.py:364} INFO - Running statement: 
+            create table if not exists weathers (
+                id INTEGER PRIMARY KEY AUTOINCREMENT
+                city_name character varying
+                max_temp character varying
+                min_temp character varying
+                wind character varying
+                description character varying
+            )
+        , parameters: None
+[2024-09-14T18:05:09.137+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near "AUTOINCREMENT"
+LINE 3:                 id INTEGER PRIMARY KEY AUTOINCREMENT
+                                               ^
+
+[2024-09-14T18:05:09.143+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=save_city_info_weather, task_id=save_city_info_weather, execution_date=20240914T180507, start_date=20240914T180508, end_date=20240914T180509
+[2024-09-14T18:05:09.149+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 55 for task save_city_info_weather (syntax error at or near "AUTOINCREMENT"
+LINE 3:                 id INTEGER PRIMARY KEY AUTOINCREMENT
+                                               ^
+; 2545)
+[2024-09-14T18:05:09.155+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2024-09-14T18:05:09.177+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

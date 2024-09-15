@@ -1,0 +1,23 @@
+[2024-09-14T17:11:45.531+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: my_first_dag.extract manual__2024-09-14T17:11:44.660146+00:00 [queued]>
+[2024-09-14T17:11:45.535+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: my_first_dag.extract manual__2024-09-14T17:11:44.660146+00:00 [queued]>
+[2024-09-14T17:11:45.536+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-14T17:11:45.536+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2024-09-14T17:11:45.536+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-14T17:11:45.543+0000] {taskinstance.py:1304} INFO - Executing <Task(_PythonDecoratedOperator): extract> on 2024-09-14 17:11:44.660146+00:00
+[2024-09-14T17:11:45.545+0000] {standard_task_runner.py:55} INFO - Started process 6386 to run task
+[2024-09-14T17:11:45.548+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'my_first_dag', 'extract', 'manual__2024-09-14T17:11:44.660146+00:00', '--job-id', '48', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpn1p414yj']
+[2024-09-14T17:11:45.548+0000] {standard_task_runner.py:83} INFO - Job 48: Subtask extract
+[2024-09-14T17:11:45.597+0000] {task_command.py:389} INFO - Running <TaskInstance: my_first_dag.extract manual__2024-09-14T17:11:44.660146+00:00 [running]> on host 769272fb41c3
+[2024-09-14T17:11:45.633+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=my_first_dag
+AIRFLOW_CTX_TASK_ID=extract
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-14T17:11:44.660146+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-14T17:11:44.660146+00:00
+[2024-09-14T17:11:48.990+0000] {python.py:177} INFO - Done. Returned value was: {'coord': {'lon': 37.6156, 'lat': 55.7522}, 'weather': [{'id': 804, 'main': 'Clouds', 'description': 'пасмурно', 'icon': '04n'}], 'base': 'stations', 'main': {'temp': 21.47, 'feels_like': 20.87, 'temp_min': 20.61, 'temp_max': 22.1, 'pressure': 1024, 'humidity': 46, 'sea_level': 1024, 'grnd_level': 1005}, 'visibility': 10000, 'wind': {'speed': 4.24, 'deg': 114, 'gust': 10.96}, 'clouds': {'all': 90}, 'dt': 1726333426, 'sys': {'type': 2, 'id': 2095214, 'country': 'RU', 'sunrise': 1726282793, 'sunset': 1726329028}, 'timezone': 10800, 'id': 524901, 'name': 'Москва', 'cod': 200}
+[2024-09-14T17:11:49.012+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=my_first_dag, task_id=extract, execution_date=20240914T171144, start_date=20240914T171145, end_date=20240914T171149
+[2024-09-14T17:11:49.067+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2024-09-14T17:11:49.092+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check

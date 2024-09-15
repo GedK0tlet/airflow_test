@@ -1,0 +1,44 @@
+[2024-09-15T09:00:01.686+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: save_city_info_weather_v01.save_city_info_weather scheduled__2024-09-15T08:00:00+00:00 [queued]>
+[2024-09-15T09:00:01.692+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: save_city_info_weather_v01.save_city_info_weather scheduled__2024-09-15T08:00:00+00:00 [queued]>
+[2024-09-15T09:00:01.692+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-15T09:00:01.693+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2024-09-15T09:00:01.693+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-15T09:00:01.700+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): save_city_info_weather> on 2024-09-15 08:00:00+00:00
+[2024-09-15T09:00:01.703+0000] {standard_task_runner.py:55} INFO - Started process 5651 to run task
+[2024-09-15T09:00:01.706+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'save_city_info_weather_v01', 'save_city_info_weather', 'scheduled__2024-09-15T08:00:00+00:00', '--job-id', '383', '--raw', '--subdir', 'DAGS_FOLDER/saver_info.py', '--cfg-path', '/tmp/tmp8r3h7j_o']
+[2024-09-15T09:00:01.707+0000] {standard_task_runner.py:83} INFO - Job 383: Subtask save_city_info_weather
+[2024-09-15T09:00:01.741+0000] {task_command.py:389} INFO - Running <TaskInstance: save_city_info_weather_v01.save_city_info_weather scheduled__2024-09-15T08:00:00+00:00 [running]> on host 0c5fe11d0c9c
+[2024-09-15T09:00:01.811+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=me
+AIRFLOW_CTX_DAG_ID=save_city_info_weather_v01
+AIRFLOW_CTX_TASK_ID=save_city_info_weather
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-15T08:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-09-15T08:00:00+00:00
+[2024-09-15T09:00:01.812+0000] {sql.py:253} INFO - Executing: 
+            create table if not exists weathers (
+                id serial PRIMARY KEY ,
+                city_name VARCHAR,
+                max_temp VARCHAR,
+                min_temp VARCHAR,
+                wind VARCHAR,
+                descript VARCHAR
+            )
+        
+[2024-09-15T09:00:01.821+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-09-15T09:00:01.945+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-09-15T09:00:01.959+0000] {sql.py:364} INFO - Running statement: 
+            create table if not exists weathers (
+                id serial PRIMARY KEY ,
+                city_name VARCHAR,
+                max_temp VARCHAR,
+                min_temp VARCHAR,
+                wind VARCHAR,
+                descript VARCHAR
+            )
+        , parameters: None
+[2024-09-15T09:00:01.967+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=save_city_info_weather_v01, task_id=save_city_info_weather, execution_date=20240915T080000, start_date=20240915T090001, end_date=20240915T090001
+[2024-09-15T09:00:01.978+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2024-09-15T09:00:01.997+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
